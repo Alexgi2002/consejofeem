@@ -1,0 +1,36 @@
+name: consejofeem
+description: A new Flutter project.
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: '>=3.0.2 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  #flutter_filereader: ^3.0.0
+  # flutter_file_view: ^2.2.1
+  path_provider: ^2.0.14
+  docx_to_text: ^1.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+  
+  flutter_launcher_icons: ^0.13.1
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/images/img6.jpg"
+  min_sdk_android: 21
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/
+    - assets/images/
+    - assets/files/
