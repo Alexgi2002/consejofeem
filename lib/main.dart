@@ -20,6 +20,10 @@ void main() async {
     if(!File("${root.path}/$file4").existsSync()) createFileFromAssets(root.path, file4);
     if(!File("${root.path}/$file5").existsSync()) createFileFromAssets(root.path, file5);
     if(!File("${root.path}/$file6").existsSync()) createFileFromAssets(root.path, file6);
+    if(!File("${root.path}/$file7").existsSync()) createFileFromAssets(root.path, file7);
+    if(!File("${root.path}/$file8").existsSync()) createFileFromAssets(root.path, file8);
+    if(!File("${root.path}/$file9").existsSync()) createFileFromAssets(root.path, file9);
+    if(!File("${root.path}/$file10").existsSync()) createFileFromAssets(root.path, file10);
   }
 
   runApp(MainApp(root: root!.path));

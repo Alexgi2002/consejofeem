@@ -1,6 +1,7 @@
 import 'dart:convert' as utf8;
 import 'dart:typed_data';
 import 'package:docx_to_text/docx_to_text.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class FileViewerPage extends StatefulWidget {
@@ -22,10 +23,13 @@ class _FileViewerPageState extends State<FileViewerPage> {
 
     return Scaffold(
       appBar: AppBar(title: Text(widget.title),),
-      body: SingleChildScrollView(child: Padding(
-        padding: const EdgeInsets.all(12.0),
-        child: Text(text, style: const TextStyle(fontSize: 17),),
-      )),
+      body: CupertinoScrollbar(
+        child: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(12.0),
+          child: Text(text, style: const TextStyle(fontSize: 17),),
+        )),
+      ),
     );
   }
 }
