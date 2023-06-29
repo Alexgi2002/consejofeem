@@ -1,7 +1,6 @@
 String file1 = "Acciones y respuestas.docx";
 String file2 = "Esta es nuestra historia.docx";
 String file3 = "Estrategias.docx";
-String file4 = "Programa regional.docx";
 String file5 = "Programa del Consejo Nacional.docx";
 String file6 = "¿Y la escuela que?.docx";
 String file7 = "A camisa quitada ok.docx";

@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'dart:io';
 
 import 'package:consejofeem/constants.dart';
 import 'package:consejofeem/pages/file_viewer_page.dart';
@@ -8,9 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage(this.root, {super.key});
-
-  final String root;
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,8 +15,7 @@ class HomePage extends StatelessWidget {
     final list = [
       file1, 
       file2, 
-      file3, 
-      file4, 
+      file3,
       file5, 
       file6, 
       file7, 
@@ -30,8 +26,7 @@ class HomePage extends StatelessWidget {
     final images = [
       "img1.jpg", 
       "img3.jpg", 
-      "img11.jpg", 
-      "img10.jpg", 
+      "img11.jpg",
       "img5.jpg", 
       "img9.jpg",
       "img4.jpg",
@@ -79,7 +74,7 @@ class HomePage extends StatelessWidget {
                               Text(list[i-1].replaceAll(".docx", ""), style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 17),),
                               const SizedBox(height: 10,),
                               FutureBuilder<String>(
-                                future: getTextFromDocx(root, list[i-1]),
+                                future: getTextFromDocx(list[i-1]),
                                 builder: (context, snapshot) {
                                   if(snapshot.hasData && snapshot.data!=null && snapshot.data!.isNotEmpty){
                                     return Text(snapshot.data!, maxLines: 3, overflow: TextOverflow.ellipsis,);
@@ -132,7 +127,7 @@ class HomePage extends StatelessWidget {
     );
   }
   
-  Future<String> getTextFromDocx(String root, String fileName) async {
+  Future<String> getTextFromDocx(String fileName) async {
     // final file = File(root+fileName);
     // final bytes = await file.readAsBytes();
     final docx = docxToText(await getBytesFromFile(fileName)).codeUnits;

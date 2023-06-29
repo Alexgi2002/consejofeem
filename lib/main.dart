@@ -1,18 +1,14 @@
 import 'dart:io';
-import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:path/path.dart';
-import 'package:path_provider/path_provider.dart';
-
-import 'package:consejofeem/constants.dart';
 import 'package:consejofeem/pages/home_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  final root = await getExternalStorageDirectory();
+  /*final root = await getExternalStorageDirectory();
   if(root!=null){
     if(!File("${root.path}/$file1").existsSync()) createFileFromAssets(root.path, file1);
     if(!File("${root.path}/$file2").existsSync()) createFileFromAssets(root.path, file2);
@@ -24,9 +20,9 @@ void main() async {
     if(!File("${root.path}/$file8").existsSync()) createFileFromAssets(root.path, file8);
     if(!File("${root.path}/$file9").existsSync()) createFileFromAssets(root.path, file9);
     if(!File("${root.path}/$file10").existsSync()) createFileFromAssets(root.path, file10);
-  }
+  }*/
 
-  runApp(MainApp(root: root!.path));
+  runApp(const MainApp());
 }
 
 Future<void> createFileFromAssets(String root, String assetFile) async {
@@ -37,16 +33,14 @@ Future<void> createFileFromAssets(String root, String assetFile) async {
 }
 
 class MainApp extends StatelessWidget {
-  const MainApp({required this.root, super.key});
-
-  final String root;
+  const MainApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "Consejo nacional FEEM",
       debugShowCheckedModeBanner: false,
-      home: HomePage("$root/"),
+      home: const HomePage(),
       themeMode: ThemeMode.system,
       theme: ThemeData(
         useMaterial3: true,
